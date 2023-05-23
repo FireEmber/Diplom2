@@ -1,0 +1,118 @@
+﻿<Window x:Class="Diplom.View.TestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diplom.View"
+        xmlns:vm="clr-namespace:Diplom.ViewModel"
+        mc:Ignorable="d"
+        Title="TestWindow"
+        Height="450" 
+        Background="Black"
+        FontFamily="30"
+        Width="300">
+    <Window.DataContext>
+        <vm:TestWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="#FF001BFF" BorderThickness="1" Grid.Row="2"/>
+        <Border BorderBrush="#FF001BFF" BorderThickness="1" Grid.Row="3"/>
+        <Border BorderBrush="#FF001BFF" BorderThickness="1" Grid.Row="4"/>
+        <Border BorderBrush="#FF001BFF" BorderThickness="1" Grid.Row="5"/>
+        <Border BorderBrush="#FF001BFF" BorderThickness="1" Grid.Row="0" >
+            <TextBlock
+                   Text="{Binding Exirsise,UpdateSourceTrigger=PropertyChanged}"
+                   VerticalAlignment="Stretch"
+                   
+                   TextWrapping="WrapWithOverflow"
+                   TextAlignment="Center" Foreground="#FF0743FF"/>
+        </Border>
+        <Border BorderBrush="#FF001BFF" BorderThickness="1" Grid.Row="1" >
+            <TextBlock Grid.Row="1"
+                   Text="{Binding Question1,UpdateSourceTrigger=PropertyChanged}"
+                   VerticalAlignment="Stretch"
+                   TextWrapping="WrapWithOverflow"
+                   TextAlignment="Center" Background="Black" Foreground="#FF001BFF"/>
+        </Border>
+        <Border BorderThickness="1" BorderBrush="#FF001BFF" Grid.Row="6" >
+            <StackPanel Orientation="Horizontal">
+                <TextBlock  Grid.Row="6"
+                   Text="{Binding CountQuestins,UpdateSourceTrigger=PropertyChanged}"
+                    TextWrapping="WrapWithOverflow"
+                    VerticalAlignment="Stretch"
+                            Foreground="#FF001BFF"
+                   TextAlignment="Center"/>
+                <TextBlock  Grid.Row="6"
+                   Text="/"
+                    Foreground="#FF001BFF"
+                    TextWrapping="WrapWithOverflow"
+                    VerticalAlignment="Stretch"
+                   TextAlignment="Center"/>
+                <TextBlock  Grid.Row="6"
+                   Text="{Binding AllCountQuestion,UpdateSourceTrigger=PropertyChanged}"
+                    TextWrapping="WrapWithOverflow"
+                    VerticalAlignment="Stretch"
+                    Foreground="#FF001BFF"
+                   TextAlignment="Center"/>
+                <TextBlock Foreground="#FF001BFF" Text="/"/>
+                <TextBlock  Grid.Row="6"
+                   Text=""
+                     Foreground="#FF001BFF"
+                     Name="TestIDAccount"
+                    TextWrapping="WrapWithOverflow"
+                    VerticalAlignment="Stretch"
+                   TextAlignment="Center"/>
+                <TextBlock Text="/"/>
+                <TextBlock  Grid.Row="6"
+                   Text=""
+                   Foreground="#FF001BFF"
+                   Name="TestIdtest"
+                    TextWrapping="WrapWithOverflow"
+                    VerticalAlignment="Stretch"
+                   TextAlignment="Center"/>
+            </StackPanel>
+        </Border>
+
+        <Button Grid.Row="2"
+                Name="AnswerButton1"
+                   Background="Black"
+                  BorderThickness="2"
+                   Command="{Binding ChoseAnswerButton1,UpdateSourceTrigger=PropertyChanged}"
+                   Content="{Binding ChoiceVariable1,UpdateSourceTrigger=PropertyChanged}"
+                   HorizontalContentAlignment="Stretch"
+                   VerticalContentAlignment="Center" Foreground="#FF0743FF"/>
+        <Button Grid.Row="3"
+                Name="AnswerButton2"
+                  Foreground="#FF001BFF"
+                   Background="Black"
+                   Content="{Binding ChoiceVariable2,UpdateSourceTrigger=PropertyChanged}"
+                   Command="{Binding ChoseAnswerButton2,UpdateSourceTrigger=PropertyChanged}"
+                   HorizontalContentAlignment="Stretch"
+                   VerticalContentAlignment="Center"/>
+        <Button Grid.Row="4"
+                Name="AnswerButton3"
+                   Background="Black"
+                  Foreground="#FF001BFF"
+                   Content="{Binding ChoiceVariable3,UpdateSourceTrigger=PropertyChanged}"
+                   Command="{Binding ChoseAnswerButton3,UpdateSourceTrigger=PropertyChanged}"
+                HorizontalContentAlignment="Stretch"
+                   VerticalContentAlignment="Center"/>
+        <Button Grid.Row="5"
+                Name="AnswerButton4"
+                   Background="Black"
+                  Foreground="#FF001BFF"
+                   Content="{Binding ChoiceVariable4,UpdateSourceTrigger=PropertyChanged}"
+                    Command="{Binding ChoseAnswerButton4,UpdateSourceTrigger=PropertyChanged}"
+                HorizontalContentAlignment="Stretch"
+                   VerticalContentAlignment="Center"/>
+    </Grid>
+</Window>
